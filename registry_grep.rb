@@ -17,7 +17,7 @@ class Metasploit3 < Msf::Post
 
 	def initialize(info={})
 		super( update_info( info,
-				'Name' => 'Registry Grep',
+				'Name' => 'Windows Registry Grep',
 				'Description' => %q{ This module searchings for registry keys},
 				'License' => MSF_LICENSE,
 				'Author' => [ 'MJC'],
@@ -39,11 +39,11 @@ class Metasploit3 < Msf::Post
 		keys = datastore['KEYS'].split(/,/)
 		keys.each do |key|
 			(key, value) = parse_query(key)
-			print_status("#{sysinfo['Computer']}: Search for => #{key}\\#{value}")
+			print_status("#{sysinfo['Computer']}: Searching for => #{key}\\#{value}")
 			has_key = registry_enumkeys(key)
 			has_val = registry_enumvals(key)
 
-			if not has_key.grep(value).empty? or not has_val.grep(value).empty?
+			if has_key.include?(value) or has_val.include?(value)
 				print_good("#{sysinfo['Computer']}: #{key}\\#{value} found in registry.")
 				match += 1
 			end
