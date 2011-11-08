@@ -6,7 +6,6 @@
 ##
 
 require 'msf/core'
-require 'rex'
 require 'msf/core/post/common'
 require 'msf/core/post/windows/priv'
 
