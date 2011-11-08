@@ -17,18 +17,18 @@ class Metasploit3 < Msf::Post
 
 	def initialize(info={})
 		super( update_info( info,
-							'Name' => 'Registry Grep',
-							'Description' => %q{ This module searchings for registry keys},
-							'License' => MSF_LICENSE,
-							'Author' => [ 'MJC'],
-							'Version' => '$Revision$',
-							'Platform' => [ 'windows' ],
-							'SessionTypes' => [ 'meterpreter' ]
-				))
-				register_options(
-				[
-					OptString.new('KEYS',[true,'Registry value, separate multiple by comma.'])
-				], self.class)
+				'Name' => 'Registry Grep',
+				'Description' => %q{ This module searchings for registry keys},
+				'License' => MSF_LICENSE,
+				'Author' => [ 'MJC'],
+				'Version' => '$Revision$',
+				'Platform' => [ 'windows' ],
+				'SessionTypes' => [ 'meterpreter' ]
+			))
+			register_options(
+			[
+			OptString.new('KEYS',[true,'Registry value, separate multiple by comma.'])
+			], self.class)
 
 	end
 
