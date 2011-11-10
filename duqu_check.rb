@@ -24,7 +24,7 @@ class Metasploit3 < Msf::Post
                                 'Version' => '$Revision$',
                                 'Platform' => [ 'windows' ],
                                 'SessionTypes' => [ 'meterpreter' ],
-								'References' => [[ 'URL', 'http://r-7.co/w5h7fY' ]]
+				'References' => [[ 'URL', 'http://r-7.co/w5h7fY' ]]
                         ))
                        
         end
